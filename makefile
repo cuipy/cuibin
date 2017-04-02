@@ -2,11 +2,6 @@ OFunc=gcc -lstdc++ -o $@ $^
 CFunc=gcc -c $< -o $@
 Objects=obj/main.o obj/global.o
 
-@if[ ! -d "obj" ];
-then 
-	mkdir "obj";
-fi;
-	
 cuibin:$(Objects)
 	$(OFunc)
 		

@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1491038583 source:/opt/cpp/cuibin/cuibin/main.cpp
+	<iostream>
+	<signal.h>
+	"options.h"
+	"global.h"
+
+1491038315 /opt/cpp/cuibin/cuibin/options.h
+
+1491038578 /opt/cpp/cuibin/cuibin/global.h
+
+1491044227 source:/opt/cpp/cuibin/cuibin/src/main.cpp
+	<iostream>
+	<signal.h>
+	"options.h"
+	"global.h"
+
+1491039093 /opt/cpp/cuibin/cuibin/src/options.h
+
+1491044278 /opt/cpp/cuibin/cuibin/src/global.h
+
+1491044278 source:/opt/cpp/cuibin/cuibin/src/global.h
+
+1491039093 source:/opt/cpp/cuibin/cuibin/src/options.h
+
