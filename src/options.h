@@ -5,7 +5,7 @@
 #ifndef _options_h_
 #define _options_h_
 
-#include "config.h"
+// #include "config.h"
 
 /* This files allows a lot of customizations of larbin
  * see doc/custom-eng.html for more details

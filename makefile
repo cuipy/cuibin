@@ -1,19 +1,15 @@
 OFunc=gcc -lstdc++ -o $@ $^
 CFunc=gcc -c $< -o $@
-Objects=obj/main.o obj/global.o
+Objects=obj/main.o
 
 cuibin:$(Objects)
 	$(OFunc)
 		
-obj/main.o:src/main.cc src/global.h src/options.h
+obj/main.o:src/main.cc src/options.h
+	test -d obj||mkdir obj
 	$(CFunc)
 
-obj/global.o:src/global.cc src/global.h
-	$(CFunc)
 
 clean:
 	rm cuibin $(Objects)
-	@if[ -d "obj" ];
-	then
-		rm -rf "obj";
-	fi;
+	test -d obj&&rm -rf obj
