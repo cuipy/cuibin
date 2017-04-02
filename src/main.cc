@@ -26,6 +26,6 @@ int main(int argc,char *args[]){
     signal(2,handler);
 #endif // PROF
 
-    cout << "HelloWorld";
+    cout << "HelloWorld\n\n";
     return 0;
 }
