@@ -6,7 +6,6 @@
 #include <signal.h>
 
 #include "options.h"
-#include "global.h"
 
 using namespace std;
 
