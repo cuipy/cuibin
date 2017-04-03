@@ -7,7 +7,7 @@
 #include <netinet/in.h>
 #include <errno.h>
 #include <fcntl.h>
-#include <iostream.h>
+#include <iostream>
 #include <string.h>
 #include <adns.h>
 #include <netdb.h>
@@ -105,8 +105,8 @@ global::global (int argc, char *argv[]) {
 	}
   }
   if (pos != argc) {
-	cerr << "usage : " << argv[0];
-	cerr << " [-c configFile] [-scratch]\n";
+	std::cerr << "usage : " << argv[0];
+	std::cerr << " [-c configFile] [-scratch]\n";
 	exit(1);
   }
 
@@ -196,7 +196,7 @@ global::global (int argc, char *argv[]) {
   sn.sa_flags = SA_RESTART;
   sn.sa_handler = SIG_IGN;
   if (sigaction(SIGPIPE, &sn, &so)) {
-    cerr << "Unable to disable SIGPIPE : " << strerror(errno) << endl;
+    std::cerr << "Unable to disable SIGPIPE : " << strerror(errno) << std::endl;
   }
 }
 
@@ -210,8 +210,8 @@ global::~global () {
 void global::parseFile (char *file) {
   int fds = open(file, O_RDONLY);
   if (fds < 0) {
-	cerr << "cannot open config file (" << file << ") : "
-         << strerror(errno) << endl;
+	std::cerr << "cannot open config file (" << file << ") : "
+         << strerror(errno) << std::endl;
 	exit(1);
   }
   char *tmp = readfile(fds);
@@ -238,7 +238,7 @@ void global::parseFile (char *file) {
       if (u->isValid()) {
         check(u);
       } else {
-        cerr << "the start url " << tok << " is invalid\n";
+        std::cerr << "the start url " << tok << " is invalid\n";
         exit(1);
       }
 	} else if (!strcasecmp(tok, "waitduration")) {
@@ -252,7 +252,7 @@ void global::parseFile (char *file) {
 	  memset((char *) proxyAddr, 0, sizeof (struct sockaddr_in));
 	  if ((hp = gethostbyname(tok)) == NULL) {
 		endhostent();
-		cerr << "Unable to find proxy ip address (" << tok << ")\n";
+		std::cerr << "Unable to find proxy ip address (" << tok << ")\n";
 		exit(1);
 	  } else {
 		proxyAddr->sin_family = hp->h_addrtype;
@@ -284,7 +284,7 @@ void global::parseFile (char *file) {
 	} else if (!strcasecmp(tok, "noExternalLinks")) {
 	  externalLinks = false;
 	} else {
-	  cerr << "bad configuration file : " << tok << "\n";
+	  std::cerr << "bad configuration file : " << tok << "\n";
 	  exit(1);
 	}
 	tok = nextToken(&posParse);
@@ -303,7 +303,7 @@ void global::manageDomain (char **posParse) {
 	tok = nextToken(posParse);
   }
   if (tok == NULL) {
-	cerr << "Bad configuration file : no end to limitToDomain\n";
+	std::cerr << "Bad configuration file : no end to limitToDomain\n";
 	exit(1);
   }
 }
@@ -322,7 +322,7 @@ void global::manageExt (char **posParse) {
 	tok = nextToken(posParse);
   }
   if (tok == NULL) {
-	cerr << "Bad configuration file : no end to forbiddenExtensions\n";
+	std::cerr << "Bad configuration file : no end to forbiddenExtensions\n";
 	exit(1);
   }
 }

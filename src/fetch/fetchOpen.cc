@@ -2,7 +2,7 @@
 // Sebastien Ailleret
 // 15-11-99 -> 04-12-01
 
-#include <iostream.h>
+#include <iostream>
 #include <errno.h>
 #include <sys/types.h>
 

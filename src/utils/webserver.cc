@@ -12,7 +12,7 @@
 
 #include <string.h>
 #include <unistd.h>
-#include <iostream.h>
+#include <iostream>
 #include <netdb.h>
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -56,8 +56,8 @@ void *startWebserver (void *none) {
 	  || setsockopt(fds, SOL_SOCKET, SO_REUSEADDR, (char*)&nAllowReuse, sizeof(nAllowReuse))
 	  || bind(fds, (struct sockaddr *) &addr, sizeof(addr)) != 0
 	  || listen(fds, 4) != 0) {
-	cerr << "Unable to get the socket for the webserver (" << global::httpPort
-         << ") : " << strerror(errno) << endl;
+	std::cerr << "Unable to get the socket for the webserver (" << global::httpPort
+         << ") : " << strerror(errno) << std::endl;
 	exit(1);
   }
   // answer requests
@@ -67,7 +67,7 @@ void *startWebserver (void *none) {
 	uint len = sizeof(addr);
 	fdc = accept(fds, (struct sockaddr *) &addrc, &len);
 	if (fdc == -1) {
-	  cerr << "Trouble with web server...\n";
+	  std::cerr << "Trouble with web server...\n";
 	} else {
       manageAns(fdc, readRequest(fdc));
       close(fdc);

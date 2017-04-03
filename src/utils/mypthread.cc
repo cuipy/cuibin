@@ -2,7 +2,7 @@
 // Sebastien Ailleret
 // 07-12-01 -> 07-12-01
 
-#include <iostream.h>
+#include <iostream>
 #include <stdlib.h>
 
 #include "utils/mypthread.h"
@@ -17,7 +17,7 @@ void startThread (StartFun run, void *arg) {
       || pthread_create(&t, &attr, run, arg) != 0
       || pthread_attr_destroy(&attr) != 0
       || pthread_detach(t) != 0) {
-    cerr << "Unable to launch a thread\n";
+    std::cerr << "Unable to launch a thread\n";
     exit(1);
   }
 }

@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include <iostream.h>
+#include <iostream>
 
 #include "types.h"
 #include "global.h"
@@ -49,7 +49,7 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
       fout = 0;
     }
     if (fin == fout && fin != 0) {
-      cerr << "previous crawl was too little, cannot reload state\n"
+      std::cerr << "previous crawl was too little, cannot reload state\n"
            << "please restart larbin with -scratch option\n";
       exit(1);
     }
@@ -204,7 +204,7 @@ char *PersistentFifo::readLine () {
       case -1 :
         // We have a trouble here
         if (errno != EINTR) {
-          cerr << "Big Problem while reading (persistentFifo.h)\n";
+          std::cerr << "Big Problem while reading (persistentFifo.h)\n";
           perror("reason");
           assert(false);
         } else {

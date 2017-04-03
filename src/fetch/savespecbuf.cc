@@ -50,8 +50,8 @@ void html::newSpec () {
     close(indexFds);
     indexFds = creat(fileName, S_IRWXU);
     if (indexFds < 0) {
-      cerr << "cannot open file " << fileName << " : "
-           << strerror(errno) << endl;
+      std::cerr << "cannot open file " << fileName << " : "
+           << strerror(errno) << std::endl;
       exit(1);
     }
   }
@@ -66,8 +66,8 @@ void html::newSpec () {
   getSpecName(nbdir, nbfile);
   fdsSpec = creat(fileName, S_IRWXU);
   if (fdsSpec < 0) {
-    cerr << "cannot open file " << fileName << " : "
-         << strerror(errno) << endl;
+    std::cerr << "cannot open file " << fileName << " : "
+         << strerror(errno) << std::endl;
     exit(1);
   }
   nbSpec = 0;

@@ -2,7 +2,7 @@
 // Sebastien Ailleret
 // 23-11-99 -> 15-02-01
 
-#include <iostream.h>
+#include <iostream>
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -29,7 +29,7 @@ hashTable::hashTable (bool create) {
   } else {
 	int fds = open("hashtable.bak", O_RDONLY);
 	if (fds < 0) {
-	  cerr << "Cannot find hashtable.bak, restart from scratch\n";
+	  std::cerr << "Cannot find hashtable.bak, restart from scratch\n";
       for (ssize_t i=0; i<hashSize/8; i++) {
         table[i] = 0;
       }
@@ -38,8 +38,8 @@ hashTable::hashTable (bool create) {
       while (sr < total) {
         ssize_t tmp = read(fds, table+sr, total-sr);
         if (tmp <= 0) {
-          cerr << "Cannot read hashtable.bak : "
-               << strerror(errno) << endl;
+          std::cerr << "Cannot read hashtable.bak : "
+               << strerror(errno) << std::endl;
           exit(1);
         } else {
           sr += tmp;

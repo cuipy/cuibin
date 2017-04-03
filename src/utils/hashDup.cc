@@ -4,7 +4,7 @@
 
 #include "config.h"
 
-#include <iostream.h>
+#include <iostream>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -28,7 +28,7 @@ hashDup::hashDup (ssize_t size, char *init, bool scratch) {
   } else {
     int fds = open(init, O_RDONLY);
 	if (fds < 0) {
-	  cerr << "Cannot find " << init << ", restart from scratch\n";
+	  std::cerr << "Cannot find " << init << ", restart from scratch\n";
       for (ssize_t i=0; i<size/8; i++) {
         table[i] = 0;
       }
@@ -37,7 +37,7 @@ hashDup::hashDup (ssize_t size, char *init, bool scratch) {
       while (sr < size) {
         ssize_t tmp = read(fds, table+sr, size-sr);
         if (tmp <= 0) {
-          cerr << "Cannot read " << init << "\n";
+          std::cerr << "Cannot read " << init << "\n";
           exit(1);
         } else {
           sr += 8*tmp;

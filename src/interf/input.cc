@@ -3,7 +3,7 @@
 // 03-02-00 -> 23-11-01
 
 #include <unistd.h>
-#include <iostream.h>
+#include <iostream>
 #include <string.h>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -200,7 +200,7 @@ void initInput () {
                       (char*)&allowReuse, sizeof(allowReuse))
         || bind(inputFds, (struct sockaddr *) &addr, sizeof(addr)) != 0
         || listen(inputFds, 4) != 0) {
-      cerr << "unable to get input socket (port " << global::inputPort
+      std::cerr << "unable to get input socket (port " << global::inputPort
            << ") : " << strerror(errno) << "\n";
       exit(1);
     }

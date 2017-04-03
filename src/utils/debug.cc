@@ -2,7 +2,7 @@
 // Sebastien Ailleret
 // 15-11-99 -> 03-04-01
 
-#include <iostream.h>
+#include <iostream>
 
 #include "options.h"
 

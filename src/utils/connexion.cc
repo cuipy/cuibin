@@ -13,7 +13,7 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <errno.h>
-#include <iostream.h>
+#include <iostream>
 
 #include "options.h"
 
