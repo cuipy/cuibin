@@ -1,4 +1,3 @@
-
 LFunc=gcc -lstdc++ -o $@ $^
 CFunc=gcc -c $< -o $@
 Objects=src/main.o src/global.o
