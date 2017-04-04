@@ -8,6 +8,8 @@
 #include "options.h"
 #include "global.h"
 
+using namespace std;
+
 static void cron();
 
 ///////////////////////////////////
@@ -20,11 +22,11 @@ static void handler(int i)
 #endif // PROF
 
 int main(int argc,char *args[]){
-    struct global glob(argc,args);
+    //struct global glob(argc,args);
 #ifdef PROF
     signal(2,handler);
 #endif // PROF
 
-    
+    cout << "HelloWorld";
     return 0;
 }
