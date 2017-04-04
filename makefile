@@ -38,8 +38,7 @@ src/utils/mypthread.o:src/utils/mypthread.cc src/utils/mypthread.h src/options.h
 src/utils/PersistentFifo.o:src/utils/PersistentFifo.cc src/utils/PersistentFifo.h src/types.h src/global.h src/utils/mypthread.h src/utils/connexion.h src/utils/url.h src/utils/text.h
 	$(CFunc)	
 	
-src/utils/string.o:src/utils/string.cc src/utils/string.h src/options.h src/types.h  src/utils/text.h src/utils/debug.h
-	$(CFunc)	
+	
 
 src/utils/text.o:src/utils/text.cc src/utils/text.h src/options.h src/utils/string.h
 	$(CFunc)	
@@ -49,7 +48,9 @@ src/utils/url.o:src/utils/url.cc src/utils/url.h src/options.h src/types.h src/g
 
 src/utils/webserver.o:src/utils/webserver.cc src/utils/webserver.h src/options.h src/global.h src/ src/fetch/sequencer.h src/utils/text.h src/utils/connexion.h src/utils/debug.h src/utils/histogram.h src/interf/useroutput.h 
 	$(CFunc)	
-
+src/utils/string.o:src/utils/string.cc src/utils/string.h src/options.h src/types.h  src/utils/text.h src/utils/debug.h
+	$(CFunc)
+	
 src/fetch/checker.o:src/fetch/checker.cc src/fetch/checker.h src/options.h src/types.h src/global.h src/utils/url.h src/utils/text.h src/utils/Vector.h src/utils/debug.h src/fetch/file.h src/fetch/hashTable.h
 	$(CFunc)
 
