@@ -5,9 +5,8 @@
 #include <iostream>
 #include <signal.h>
 
-#include "options.h"
+#include "global.h"
 
-using namespace std;
 
 static void cron();
 
@@ -21,11 +20,11 @@ static void handler(int i)
 #endif // PROF
 
 int main(int argc,char *args[]){
-    //struct global glob(argc,args);
+    struct global glob(argc,args);
 #ifdef PROF
     signal(2,handler);
 #endif // PROF
 
-    cout << "HelloWorld\n\n";
+    // cout << "HelloWorld\n\n";
     return 0;
 }
