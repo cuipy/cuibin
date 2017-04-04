@@ -79,28 +79,28 @@ src/fetch/savespecbuf.o:src/fetch/savespecbuf.cc src/fetch/savespecbuf.h
 src/fetch/sequencer.o:src/fetch/sequencer.cc src/fetch/sequencer.h src/options.h src/global.h src/type.h src/utils/url.h src/utils/debug.h src/fetch/site.h  
 	$(CFunc)
 
-src/fetch/specbuf.o:%.cc %.h src/fetch/defaultspecbuf.h src/fetch/dynamicspecbuf.h src/fetch/specbuf.h
+src/fetch/specbuf.o:src/fetch/specbuf.cc src/fetch/specbuf.h src/fetch/defaultspecbuf.h src/fetch/dynamicspecbuf.h src/fetch/specbuf.h
 	$(CFunc)	
 	
-src/interf/defaultuseroutput.o:%.cc  src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h src/fetch/file.h src/interf/output.h
+src/interf/defaultuseroutput.o:src/interf/defaultuseroutput.cc  src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h src/fetch/file.h src/interf/output.h
 	$(CFunc)
 	
-src/interf/input.o:%.cc  src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h 
+src/interf/input.o:src/interf/input.cc  src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h 
 	$(CFunc)
 	
-src/interf/mirrorsaveuseroutput.o:%.cc  src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h src/fetch/file.h src/interf/output.h
+src/interf/mirrorsaveuseroutput.o:src/interf/mirrorsaveuseroutput.cc  src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h src/fetch/file.h src/interf/output.h
 	$(CFunc)		
 
-src/interf/output.o:%.cc %.h src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h src/utils/mypthread.h src/interf/useroutput.h
+src/interf/output.o:src/interf/output.cc src/interf/output.h src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h src/utils/mypthread.h src/interf/useroutput.h
 	$(CFunc)	
 	
-src/interf/saveuseroutput.o:%.cc  src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h src/fetch/file.h src/interf/output.h
+src/interf/saveuseroutput.o:src/interf/saveuseroutput.cc  src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h src/fetch/file.h src/interf/output.h
 	$(CFunc)
 	
-src/interf/statususeroutput.o:%.cc  src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h src/fetch/file.h src/interf/output.h
+src/interf/statususeroutput.o:src/interf/statususeroutput.cc  src/options.h src/global.h src/type.h src/utils/text.h src/utils/debug.h src/fetch/file.h src/interf/output.h
 	$(CFunc)
 		
-src/interf/useroutput.o:%.cc %.h src/options.h src/interf/saveuseroutput.h src/interf/mirrorsaveuseroutput.h src/interf/statsuseroutput.h src/interf/defaultuseroutput.h
+src/interf/useroutput.o:src/interf/useroutput.cc src/interf/useroutput.h src/options.h src/interf/saveuseroutput.h src/interf/mirrorsaveuseroutput.h src/interf/statsuseroutput.h src/interf/defaultuseroutput.h
 	$(CFunc)		
 	
 	
