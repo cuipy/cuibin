@@ -3,11 +3,12 @@ CFunc=gcc -c $< -o $@
 Objects=obj/main.o
 MkDir=test -d obj/utils||mkdir -p obj/utils;test -d obj/fetch||mkdir -p obj/fetch;test -d obj/interf||mkdir -p obj/interf;
 RmDir=test -d obj&&rm -rf obj
+Headers=src/%.h src/utils/%.h src/fetch/%.h src/interf/%.h
 
 cuibin:$(Objects)
 	$(OFunc)
 		
-obj/main.o:src/main.cc src/options.h
+obj/main.o:src/main.cc $(Headers)
 	$(MkDir)
 	$(CFunc)
 
