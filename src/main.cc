@@ -76,6 +76,7 @@ int main (int argc, char *argv[]) {
   printf("%s is starting its search\n", global::userAgent);
   time_t old = global::now;
 
+  printf("global maxFds :%d",global::maxFds);
   for (;;) {
     // update time
     global::now = time(NULL);
