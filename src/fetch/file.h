@@ -102,7 +102,7 @@ class html : public file {
 
 #ifdef LINKS_INFO
   /** return the links */
-  inline Vector<char> *html::getLinks () { return &links; }
+  inline Vector<char> *getLinks () { return &links; }
 #endif // LINKS_INFO
 };
 

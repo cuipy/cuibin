@@ -81,10 +81,10 @@ long int global::remainBand = MAXBANDWIDTH;
 int global::IPUrl = 0;
 
 /** Constructor : initialize almost everything
- * Everything is read from the config file (larbin.conf by default)
+ * Everything is read from the config file (cuibin.conf by default)
  */
 global::global (int argc, char *argv[]) {
-  char *configFile = "larbin.conf";
+  char *configFile = "cuibin.conf";
 #ifdef RELOAD
   bool reload = true;
 #else

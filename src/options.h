@@ -36,17 +36,17 @@
 // What do you want the crawler to do
 
 // do you want to follow links in pages
-//#define FOLLOW_LINKS
+#define FOLLOW_LINKS
 
 // do you want the crawler to associate to each page the list of its sons
-//#define LINKS_INFO
+#define LINKS_INFO
 
 // do you want to associate a tag to pages (given in input)
 // this allows to follow a page from input to output (and follow redirection)
 //#define URL_TAGS
 
 // do you want to suppress duplicate pages
-//#define NO_DUP
+#define NO_DUP
 
 // do you want larbin to stop when everything has been fetched
 //#define EXIT_AT_END
@@ -88,7 +88,7 @@
 // if this option is set, larbin saves the hashtable from time to time
 // this way it can restart from where it last stopped
 // by reloading the table
-//#define RELOAD
+#define RELOAD
 
 
 //////////////////////////////////////////////////////////

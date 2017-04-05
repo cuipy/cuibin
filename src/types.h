@@ -31,8 +31,8 @@
 #define dnsValidTime 2*24*3600
 
 // Maximum size of a page
-#define maxPageSize    100000
-#define nearlyFullPage  90000
+#define maxPageSize    1000000
+#define nearlyFullPage  900000
 
 // Maximum size of a robots.txt that is read
 // the value used is min(maxPageSize, maxRobotsSize)
