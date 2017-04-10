@@ -60,6 +60,10 @@ static uint count = 0;
 ///////////////////////////////////////////////////////////
 // If this thread terminates, the whole program exits
 int main (int argc, char *argv[]) {
+#ifndef NDEBUG
+  printf("Start By Debug Model\n");
+#endif  
+
   // create all the structures
   global glob(argc, argv);
 #ifdef PROF
