@@ -39,12 +39,12 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
 	name = readdir(dir);
 	while (name != NULL) {
 #ifndef NDEBUG
-	  printf("PersistentFifo::PersistentFifo() name->d_name:%s\n",name->d_name);
+  printf("PersistentFifo::PersistentFifo() name->d_name:%s\n",name->d_name);
 #endif
 	  if (startWith(fileName, name->d_name)) {
 		int tmp = getNumber(name->d_name);
 #ifndef NDEBUG
-	  printf("PersistentFifo::PersistentFifo() getNumber(name->d_name):%d\n",tmp);
+  printf("PersistentFifo::PersistentFifo() getNumber(name->d_name):%d\n",tmp);
 #endif
 		if (fin == -1) {
 		  fin = tmp;
