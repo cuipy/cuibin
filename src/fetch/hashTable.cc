@@ -57,6 +57,9 @@ hashTable::~hashTable () {
 
 /* save the hashTable in a file */
 void hashTable::save() {
+#ifndef NDEBUG
+  printf("hashTable.save() method start.");
+#endif
   rename("hashtable.bak", "hashtable.old");
   int fds = creat("hashtable.bak", 00600);
   if (fds >= 0) {
