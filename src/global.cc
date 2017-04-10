@@ -94,10 +94,13 @@ global::global (int argc, char *argv[]) {
   // verification of arguments
   int pos = 1;
   while (pos < argc) {
+	// if arg=-c , then custom you config file 
 	if (!strcmp(argv[pos], "-c") && argc > pos+1) {
 	  configFile = argv[pos+1];
 	  pos += 2;
-	} else if (!strcmp(argv[pos], "-scratch")) {
+	} 
+	// if arg = -scratch ,then restart load ,and param reload=false  
+	else if (!strcmp(argv[pos], "-scratch")) {
 	  reload = false;
 	  pos++;
 	} else {
@@ -113,8 +116,8 @@ global::global (int argc, char *argv[]) {
   // Standard values
   waitDuration = 60;
   depthInSite = 5;
-  userAgent = "larbin";
-  sender = "larbin@unspecified.mail";
+  userAgent = "cuibin";
+  sender = "cuibin@unspecified.mail";
   nb_conn = 20;
   dnsConn = 3;
   httpPort = 0;

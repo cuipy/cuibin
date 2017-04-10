@@ -18,17 +18,20 @@
 PersistentFifo::PersistentFifo (bool reload, char *baseName) {
   fileNameLength = strlen(baseName)+5;
   fileName = new char[fileNameLength+2];
-#ifndef NDEBUG
-  printf("PersistentFifo() baseName:%s\n",baseName);
-#endif
+
   strcpy(fileName, baseName);
   fileName[fileNameLength+1] = 0;
   outbufPos = 0;
   bufPos = 0;
   bufEnd = 0;
   mypthread_mutex_init (&lock, NULL);
+
+#ifndef NDEBUG
+    printf("PersistentFifo::PersistentFifo() reload=%d\n",reload);
+#endif
   if (reload) {
-	DIR *dir = opendir(".");
+
+    DIR *dir = opendir(".");
 	struct dirent *name;
 
 	fin = -1;
