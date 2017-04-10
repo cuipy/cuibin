@@ -19,7 +19,7 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
   fileNameLength = strlen(baseName)+5;
   fileName = new char[fileNameLength+2];
 #ifndef NDEBUG
-  printf("PersistentFifo() fileName:%s\n",fileName);
+  printf("PersistentFifo() baseName:%s\n",baseName);
 #endif
   strcpy(fileName, baseName);
   fileName[fileNameLength+1] = 0;
