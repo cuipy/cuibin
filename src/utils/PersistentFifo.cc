@@ -27,7 +27,7 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
   mypthread_mutex_init (&lock, NULL);
 
 #ifndef NDEBUG
-    printf("PersistentFifo::PersistentFifo() reload=%d\n",reload);
+    printf("PersistentFifo::PersistentFifo() filename=%s\n",fileName);
 #endif
   if (reload) {
 
