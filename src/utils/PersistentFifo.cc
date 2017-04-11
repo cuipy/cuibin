@@ -140,6 +140,7 @@ int PersistentFifo::getLength () {
 }
 
 void PersistentFifo::makeName (uint nb) {
+    crash(fileNameLength);
   for (uint i=fileNameLength; i>=fileNameLength-5; i--) {
 	fileName[i] = (nb % 10) + '0';
 	nb /= 10;
