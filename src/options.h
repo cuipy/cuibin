@@ -113,6 +113,6 @@
 
 // Please enable this option if you want to report a crash
 // then compile with "make debug"
-//#define CRASH
+#define CRASH
 
 #endif // _options_h_
