@@ -21,6 +21,8 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
 
   strcpy(fileName, baseName);
   fileName[fileNameLength+1] = 0;
+
+  crash(fileName);
   outbufPos = 0;
   bufPos = 0;
   bufEnd = 0;
