@@ -181,7 +181,6 @@ void NamedSite::newQuery () {
   } else if (isdigit(name[0])) {
     // the name already in numbers-and-dots notation
 	siteSeen();
-	crash(name);
 	if (inet_aton(name, &addr)) {
 	  // Yes, it is in numbers-and-dots notation
 	  siteDNS();
