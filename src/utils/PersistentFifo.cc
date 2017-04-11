@@ -26,6 +26,12 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
   bufEnd = 0;
   mypthread_mutex_init (&lock, NULL);
 
+<<<<<<< HEAD
+#ifndef NDEBUG
+    printf("PersistentFifo::PersistentFifo() filename=%s\n",fileName);
+#endif
+=======
+>>>>>>> 0be3a573bc0182536a4ac3cfe830177abfd838d6
   if (reload) {
 
     DIR *dir = opendir(".");
@@ -35,8 +41,19 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
 	fout = -1;
 	name = readdir(dir);
 	while (name != NULL) {
+<<<<<<< HEAD
+#ifndef NDEBUG
+  printf("PersistentFifo::PersistentFifo() name->d_name:%s\n",name->d_name);
+#endif
 	  if (startWith(fileName, name->d_name)) {
 		int tmp = getNumber(name->d_name);
+#ifndef NDEBUG
+  printf("PersistentFifo::PersistentFifo() getNumber(name->d_name):%d\n",tmp);
+#endif
+=======
+	  if (startWith(fileName, name->d_name)) {
+		int tmp = getNumber(name->d_name);
+>>>>>>> 0be3a573bc0182536a4ac3cfe830177abfd838d6
 		if (fin == -1) {
 		  fin = tmp;
 		  fout = tmp;
