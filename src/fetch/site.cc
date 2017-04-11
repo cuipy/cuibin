@@ -32,7 +32,7 @@ void initSite () {
   stataddr.sin_family = AF_INET;
 }
 
-/** connect to this addr using connection conn 
+/** connect to this addr using connection conn
  * return the state of the socket
  */
 static char getFds (Connexion *conn, struct in_addr *addr, uint port) {
@@ -181,6 +181,7 @@ void NamedSite::newQuery () {
   } else if (isdigit(name[0])) {
     // the name already in numbers-and-dots notation
 	siteSeen();
+	crash(name);
 	if (inet_aton(name, &addr)) {
 	  // Yes, it is in numbers-and-dots notation
 	  siteDNS();
@@ -380,7 +381,7 @@ void NamedSite::robotsResult (FetchError res) {
     isInFifo = false;
   } else {
     global::dnsSites->put(this);
-  }  
+  }
 }
 
 void NamedSite::transfer (url *u) {
@@ -518,7 +519,7 @@ int IPSite::fetch () {
         delete u;
         global::freeConns->put(conn);
         return fetch();
-      }    
+      }
     }
   }
 }
