@@ -63,9 +63,6 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
 	out = 0;
 	makeName(fin);
 
-#ifndef NDEBUG
-  printf("PersistentFifo::PersistentFifo() fileName=%s,fin=%d,fout=%d\n",fileName,fin,fout);
-#endif
 	wfds = creat (fileName, S_IRUSR | S_IWUSR);
 	makeName(fout);
 	rfds = open (fileName, O_RDONLY);
