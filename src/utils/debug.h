@@ -150,7 +150,7 @@ extern uint siteDNSPrev;
 #endif // NOSTATS
 
 #ifdef CRASH
-#define crash(s) ( std::cerr <<__FUNCTION__<<" : " << s << "\n")
+#define crash(s) ( std::cerr <<__FILE__<<" "<<__FUNCTION__<<" : " << s << "\n")
 #else // CRASH
 #define crash(s) ((void) 0)
 #endif // CRASH
