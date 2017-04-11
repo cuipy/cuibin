@@ -56,18 +56,112 @@
 		<Linker>
 			<Add directory="src" />
 		</Linker>
+		<Unit filename="adns/adns.h" />
+		<Unit filename="adns/check.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="adns/config.h" />
+		<Unit filename="adns/dlist.h" />
+		<Unit filename="adns/event.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="adns/general.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="adns/internal.h" />
+		<Unit filename="adns/makefile" />
+		<Unit filename="adns/parse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="adns/poll.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="adns/query.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="adns/reply.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="adns/setup.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="adns/transmit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="adns/tvarith.h" />
+		<Unit filename="adns/types.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="makefile">
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="src/global.h">
-			<Option target="Debug" />
-		</Unit>
-		<Unit filename="src/main.cpp">
-			<Option target="Debug" />
-		</Unit>
-		<Unit filename="src/options.h">
-			<Option target="Debug" />
-		</Unit>
+		<Unit filename="src/config.h" />
+		<Unit filename="src/fetch/checker.cc" />
+		<Unit filename="src/fetch/checker.h" />
+		<Unit filename="src/fetch/defaultspecbuf.cc" />
+		<Unit filename="src/fetch/defaultspecbuf.o" />
+		<Unit filename="src/fetch/dynamicspecbuf.cc" />
+		<Unit filename="src/fetch/dynamicspecbuf.h" />
+		<Unit filename="src/fetch/fetchOpen.cc" />
+		<Unit filename="src/fetch/fetchOpen.h" />
+		<Unit filename="src/fetch/fetchPipe.cc" />
+		<Unit filename="src/fetch/fetchPipe.h" />
+		<Unit filename="src/fetch/file.cc" />
+		<Unit filename="src/fetch/file.h" />
+		<Unit filename="src/fetch/hashTable.cc" />
+		<Unit filename="src/fetch/hashTable.h" />
+		<Unit filename="src/fetch/savespecbuf.cc" />
+		<Unit filename="src/fetch/savespecbuf.h" />
+		<Unit filename="src/fetch/sequencer.cc" />
+		<Unit filename="src/fetch/sequencer.h" />
+		<Unit filename="src/fetch/site.cc" />
+		<Unit filename="src/fetch/site.h" />
+		<Unit filename="src/fetch/specbuf.cc" />
+		<Unit filename="src/fetch/specbuf.h" />
+		<Unit filename="src/global.cc" />
+		<Unit filename="src/global.h" />
+		<Unit filename="src/interf/defaultuseroutput.cc" />
+		<Unit filename="src/interf/defaultuseroutput.o" />
+		<Unit filename="src/interf/input.cc" />
+		<Unit filename="src/interf/input.h" />
+		<Unit filename="src/interf/mirrorsaveuseroutput.cc" />
+		<Unit filename="src/interf/mirrorsaveuseroutput.o" />
+		<Unit filename="src/interf/output.cc" />
+		<Unit filename="src/interf/output.h" />
+		<Unit filename="src/interf/saveuseroutput.cc" />
+		<Unit filename="src/interf/saveuseroutput.o" />
+		<Unit filename="src/interf/statsuseroutput.cc" />
+		<Unit filename="src/interf/statsuseroutput.o" />
+		<Unit filename="src/interf/useroutput.cc" />
+		<Unit filename="src/interf/useroutput.h" />
+		<Unit filename="src/main.cc" />
+		<Unit filename="src/makefile" />
+		<Unit filename="src/options.h" />
+		<Unit filename="src/types.h" />
+		<Unit filename="src/utils/ConstantSizedFifo.h" />
+		<Unit filename="src/utils/Fifo.h" />
+		<Unit filename="src/utils/PersistentFifo.cc" />
+		<Unit filename="src/utils/PersistentFifo.h" />
+		<Unit filename="src/utils/SyncFifo.h" />
+		<Unit filename="src/utils/Vector.h" />
+		<Unit filename="src/utils/connexion.cc" />
+		<Unit filename="src/utils/connexion.h" />
+		<Unit filename="src/utils/debug.cc" />
+		<Unit filename="src/utils/debug.h" />
+		<Unit filename="src/utils/hashDup.cc" />
+		<Unit filename="src/utils/hashDup.h" />
+		<Unit filename="src/utils/histogram.cc" />
+		<Unit filename="src/utils/histogram.h" />
+		<Unit filename="src/utils/mypthread.cc" />
+		<Unit filename="src/utils/mypthread.h" />
+		<Unit filename="src/utils/string.cc" />
+		<Unit filename="src/utils/string.h" />
+		<Unit filename="src/utils/text.cc" />
+		<Unit filename="src/utils/text.h" />
+		<Unit filename="src/utils/url.cc" />
+		<Unit filename="src/utils/url.h" />
+		<Unit filename="src/utils/webserver.cc" />
+		<Unit filename="src/utils/webserver.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
