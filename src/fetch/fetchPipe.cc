@@ -203,7 +203,6 @@ static void pipeRead (Connexion *conn) {
 #endif // THREAD_OUTPUT
 
 static void endOfFile (Connexion *conn) {
-  crash("End of file");
   conn->state = emptyC;
   close(conn->socket);
   if (conn->parser->isRobots) {
