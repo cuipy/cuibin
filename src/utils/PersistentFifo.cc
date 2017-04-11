@@ -142,7 +142,7 @@ void PersistentFifo::makeName (uint nb) {
 	nb /= 10;
   }
 }
-
+/// get fifo and ffwait file number
 int PersistentFifo::getNumber (char *file) {
   uint len = strlen(file);
   int res = 0;
