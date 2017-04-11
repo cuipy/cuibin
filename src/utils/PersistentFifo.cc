@@ -36,11 +36,11 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
 	fout = -1;
 	name = readdir(dir);
 	while (name != NULL) {
-          
+
 	  if (startWith(fileName, name->d_name)) {
-		        crash(fileName);
+        crash(fileName);
         crash(name->d_name);
-                int tmp = getNumber(name->d_name);
+        int tmp = getNumber(name->d_name);
 		if (fin == -1) {
 		  fin = tmp;
 		  fout = tmp;
@@ -62,6 +62,7 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
     }
 	closedir(dir);
 	in = (fin - fout) * urlByFile;
+	crash(in);
 	out = 0;
 	makeName(fin);
 
