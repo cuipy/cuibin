@@ -8,7 +8,10 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
+#include <iostream>
 #include "options.h"
+
+using namespace std;
 
 ////////////////////////////////////////////////
 // debug
@@ -147,7 +150,7 @@ extern uint siteDNSPrev;
 #endif // NOSTATS
 
 #ifdef CRASH
-#define crash(s) (cerr << s << "\n")
+#define crash(s) ( std::cerr <<__FUNCTION__<<" : " << s << "\n")
 #else // CRASH
 #define crash(s) ((void) 0)
 #endif // CRASH
