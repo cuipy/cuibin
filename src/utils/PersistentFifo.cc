@@ -38,16 +38,14 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
 	while (name != NULL) {
 
 	  if (startWith(fileName, name->d_name)) {
-        crash(fileName);
-        crash(name->d_name);
-        int tmp = getNumber(name->d_name);
-		if (fin == -1) {
-		  fin = tmp;
-		  fout = tmp;
-		} else {
-		  if (tmp > fin) { fin = tmp; }
-		  if (tmp < fout) { fout = tmp; }
-		}
+            int tmp = getNumber(name->d_name);
+	    if (fin == -1) {
+	      fin = tmp;
+	      fout = tmp;
+	    } else {
+	      if (tmp > fin) { fin = tmp; }
+	      if (tmp < fout) { fout = tmp; }
+	    }
 	  }
 	  name = readdir(dir);
 	}
@@ -62,10 +60,9 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
     }
 	closedir(dir);
 	in = (fin - fout) * urlByFile;
-	crash(in);
+
 	out = 0;
 	makeName(fin);
-
 	wfds = creat (fileName, S_IRUSR | S_IWUSR);
 	makeName(fout);
 	rfds = open (fileName, O_RDONLY);
@@ -140,11 +137,11 @@ int PersistentFifo::getLength () {
 }
 
 void PersistentFifo::makeName (uint nb) {
-    crash(fileNameLength);
   for (uint i=fileNameLength; i>=fileNameLength-5; i--) {
 	fileName[i] = (nb % 10) + '0';
 	nb /= 10;
   }
+ 
 }
 /// get fifo and ffwait file number
 int PersistentFifo::getNumber (char *file) {

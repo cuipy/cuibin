@@ -87,11 +87,9 @@ int main (int argc, char *argv[]) {
     stateMain(-count);
     waitBandwidth(&old);
     stateMain(1);
-    crash(global::maxFds);
     for (int i=0; i<global::maxFds; i++)
       global::ansPoll[i] = 0;
 
-    crash(global::posPoll);
     for (uint i=0; i<global::posPoll; i++)
       global::ansPoll[global::pollfds[i].fd] = global::pollfds[i].revents;
     global::posPoll = 0;

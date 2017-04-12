@@ -9,6 +9,8 @@
 #ifndef HASHDUP_H
 #define HASHDUP_H
 
+#include "utils/debug.h"
+
 class hashDup {
  private:
   ssize_t size;
