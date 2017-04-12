@@ -60,10 +60,6 @@ static uint count = 0;
 ///////////////////////////////////////////////////////////
 // If this thread terminates, the whole program exits
 int main (int argc, char *argv[]) {
-#ifndef NDEBUG
-  printf("Start with Debug Model\n");
-#endif  
-
   // create all the structures
   global glob(argc, argv);
 #ifdef PROF
@@ -110,6 +106,8 @@ int main (int argc, char *argv[]) {
     stateMain(count++);
     poll(global::pollfds, global::posPoll, 10);
     stateMain(7);
+
+    crash("run main again.");
   }
 }
 
