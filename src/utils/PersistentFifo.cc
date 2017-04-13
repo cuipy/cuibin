@@ -53,17 +53,19 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
       fin = 0;
       fout = 0;
     }
-    if (fin == fout && fin != 0) {
+   /* if (fin == fout && fin != 0) {
       std::cerr << "previous crawl was too little, cannot reload state\n"
            << "please restart larbin with -scratch option\n";
       exit(1);
-    }
+    }*/
 	closedir(dir);
 	in = (fin - fout) * urlByFile;
 
 	out = 0;
 	makeName(fin);
-	wfds = creat (fileName, S_IRUSR | S_IWUSR);
+	wfds=open(fileName,O_CREAT|O_RDWR,S_IRUSR | S_IWUSR);
+
+	//wfds = creat (fileName, S_IRUSR | S_IWUSR);
 	makeName(fout);
 	rfds = open (fileName, O_RDONLY);
   } else {

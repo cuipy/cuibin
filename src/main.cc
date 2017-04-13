@@ -33,6 +33,7 @@ static void cron ();
 #ifdef PROF
 static bool stop = false;
 static void handler (int i) {
+  printf("user price ctrl+c!");
   stop = true;
 }
 #endif // PROF
@@ -115,7 +116,10 @@ int main (int argc, char *argv[]) {
 static void cron () {
   // shall we stop
 #ifdef PROF
-  if (stop) exit(2);
+  if (stop){
+    printf("stop cuibin!");
+    exit(2);
+  ]
 #endif // PROF
 #ifdef EXIT_AT_END
   if (global::URLsDisk->getLength() == 0

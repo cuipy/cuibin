@@ -21,8 +21,6 @@ hashDup::hashDup (ssize_t size, char *init, bool scratch) {
   this->size = size;
   file = init;
 
-  crash(size);
-
   table = new char[size / 8];
   if (init == NULL || scratch) {
     for (ssize_t i=0; i<size/8; i++) {
