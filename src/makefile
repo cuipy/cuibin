@@ -6,17 +6,17 @@ Objs:=$(CCFiles:%.cc=%.o)
 
 ifeq ($(debug),true)
 LCPP=g++ -pthread -lpthread -lresolv -lnsl -g
-CCPP=g++ -w -Wno-deprecated -Wall -O3 -D_REENTRANT -g
+CCPP=g++ -Wall -O3 -D_REENTRANT -g
 else
 LCPP=g++ -pthread -lpthread -lresolv -lnsl
-CCPP=g++ -w -Wno-deprecated -Wall -O3 -D_REENTRANT
+CCPP=g++ -Wall -O3 -D_REENTRANT
 endif
 
 cuibin:$(Objs)
 	$(LCPP)  -o $@ $^ ../adns/libadns.a
 
 $(Objs):%.o:%.cc $(HFiles)
-	$(CCPP)  -c $< -o $@ -I- -I. -I../adns -ladns
+	$(CCPP)  -c $< -o $@  -I. -I../adns -ladns
 
 .PHONY:clean
 clean:
