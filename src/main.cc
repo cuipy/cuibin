@@ -28,12 +28,11 @@
 #include "utils/histogram.h"
 
 static void cron ();
-
+#define PROF 1
 ///////////////////////////////////////////////////////////
 #ifdef PROF
 static bool stop = false;
 static void handler (int i) {
-  printf("user price ctrl+c!");
   stop = true;
 }
 #endif // PROF
@@ -117,9 +116,8 @@ static void cron () {
   // shall we stop
 #ifdef PROF
   if (stop){
-    printf("stop cuibin!");
     exit(2);
-  ]
+  }
 #endif // PROF
 #ifdef EXIT_AT_END
   if (global::URLsDisk->getLength() == 0
