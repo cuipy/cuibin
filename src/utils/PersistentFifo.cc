@@ -92,7 +92,6 @@ PersistentFifo::PersistentFifo (bool reload, char *baseName) {
 }
 
 PersistentFifo::~PersistentFifo () {
-  crash("Khdkdj");
   mypthread_mutex_destroy (&lock);
   close(rfds);
   close(wfds);
